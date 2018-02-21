@@ -14,13 +14,22 @@ float:left;
 #github {
 float:right;
 }
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: cyan;
+	color: black;
+	text-align: center;
+}
 </style>
 </head>
 
-<body>
+<body onload=NameGenerator()>
 
 <div id="title">
-<h1>Ghost 👻 Registrar</h1>
+<h1 id="TitleText">Ghost 👻 Registrr</h1>
 </div>
 
 <div id="crninput">
@@ -39,19 +48,35 @@ float:right;
 </form>
 </div>
 
-<div id="names">
-<p>
-Brought to you by:<br>
+<div class="footer">
+	<table width=100%> <tr> <td align="left">Brought to you by:<br>
 John Morach<br>
 Cameron Riley<br>
 Sam Breese<br>
-Kyle Fawcett
-</p>
+Kyle Fawcettt</td>
+	
+	<td align="right">
+	<a href="https://github.com/ghost-registrar/ghost-registrar">GitHub</a>
+	</td>
+	</table>
 </div>
 
+
 <div id="github">
-<a href="https://github.com/ghost-registrar/ghost-registrar">GitHub</a>
 </div>
+
+<script>
+
+	function NameGenerator() {
+	    if (Math.floor((Math.random() * 10) + 1) % 2 == 1) {
+	    	document.getElementById("TitleText").innerHTML = "Ghost 👻 Registrar"
+	    }
+	    else {
+	    	document.getElementById("TitleText").innerHTML = "Ghost 👻 Register"
+	    }
+	}
+
+</script>
 
 </body>
 </html>
