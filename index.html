@@ -1,31 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-#title {
-text-align:center;
-}
-#crninput {
-text-align:center;
-}
-#names {
-float:left;
-}
-#github {
-float:right;
-}
-.footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: cyan;
-	color: black;
-	text-align: center;
-}
-</style>
+<link rel="stylesheet" href="css.css">
 </head>
 
+<script src="title.js"></script>
 <body onload=NameGenerator()>
 
 <div id="title">
@@ -53,7 +32,7 @@ float:right;
 John Morach<br>
 Cameron Riley<br>
 Sam Breese<br>
-Kyle Fawcettt</td>
+Kyle Fawcett</td>
 	
 	<td align="right">
 	<a href="https://github.com/ghost-registrar/ghost-registrar">GitHub</a>
@@ -61,22 +40,8 @@ Kyle Fawcettt</td>
 	</table>
 </div>
 
-
 <div id="github">
 </div>
-
-<script>
-
-	function NameGenerator() {
-	    if (Math.floor((Math.random() * 10) + 1) % 2 == 1) {
-	    	document.getElementById("TitleText").innerHTML = "Ghost 👻 Registrar"
-	    }
-	    else {
-	    	document.getElementById("TitleText").innerHTML = "Ghost 👻 Register"
-	    }
-	}
-
-</script>
 
 </body>
 </html>

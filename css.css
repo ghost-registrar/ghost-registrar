@@ -1,0 +1,21 @@
+#title {
+text-align:center;
+}
+#crninput {
+text-align:center;
+}
+#names {
+float:left;
+}
+#github {
+float:right;
+}
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: cyan;
+	color: black;
+	text-align: center;
+}
