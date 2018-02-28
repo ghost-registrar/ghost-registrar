@@ -1,12 +1,25 @@
 function NameGenerator() {
 	var val = document.getElementById("TitleText").innerHTML;
-    if (Math.floor((Math.random() * 10) + 1) % 2 == 1) {
+	if (Math.floor((Math.random() * 10) + 1) % 2 == 1) {
 		val = "Ghost " + val + " Registrar";
-    } else {
+	} else {
 		val = "Ghost " + val + " Register";
 	}
 	
 	document.getElementById("TitleText").innerHTML = val;
+}
+
+function CreditsGenerator() {
+	
+	var namesArray = ["John Morach", "Cameron Riley", "Sam Breese", "Kyle Fawcett"];
+	var published = ""
+	
+	published += namesArray.splice(Math.floor(Math.random()*namesArray.length), 1) + '<br>';
+	published += namesArray.splice(Math.floor(Math.random()*namesArray.length), 1) + '<br>';
+	published += namesArray.splice(Math.floor(Math.random()*namesArray.length), 1) + '<br>';
+	published += namesArray.splice(Math.floor(Math.random()*namesArray.length), 1) + '<br>';
+	
+	document.getElementById("Credits").innerHTML = published;
 }
 
 function ImageGenerator() {
@@ -21,4 +34,5 @@ function ImageGenerator() {
 function Generator() {
 	NameGenerator();
 	ImageGenerator();
+	CreditsGenerator();
 }
