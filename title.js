@@ -1,7 +1,12 @@
 function NameGenerator() {
+	var val = document.getElementById("TitleText").innerHTML;
     if (Math.floor((Math.random() * 10) + 1) % 2 == 1) {
-    	document.getElementById("TitleText").innerHTML = document.getElementById("TitleText").innerHTML.replace("Registrar", "Register");
-    }
+		val = "Ghost " + val + " Registrar";
+    } else {
+		val = "Ghost " + val + " Register";
+	}
+	
+	document.getElementById("TitleText").innerHTML = val;
 }
 
 function ImageGenerator() {
@@ -9,6 +14,8 @@ function ImageGenerator() {
 	var img = document.getElementById("TitleImage");
 	
 	img.src = 'Ghosts/Ghost' + num + '.png';
+	img.height = 32;
+	img.width = 32;
 }
 
 function Generator() {
