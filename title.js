@@ -14,6 +14,7 @@ function CreditsGenerator() {
 	var namesArray = ["John Morach", "Cameron Riley", "Sam Breese", "Kyle Fawcett"];
 	var published = ""
 	
+	published += 'Brought to you by:<br>'
 	published += namesArray.splice(Math.floor(Math.random()*namesArray.length), 1) + '<br>';
 	published += namesArray.splice(Math.floor(Math.random()*namesArray.length), 1) + '<br>';
 	published += namesArray.splice(Math.floor(Math.random()*namesArray.length), 1) + '<br>';
