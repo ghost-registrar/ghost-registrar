@@ -2,8 +2,10 @@ function NameGenerator() {
 	var val = document.getElementById("TitleText").innerHTML;
 	if (Math.floor((Math.random() * 10) + 1) % 2 == 1) {
 		val = "Ghost " + val + " Registrar";
+		document.getElementById("PageTitle").innerHTML = "Ghost Registrar";
 	} else {
 		val = "Ghost " + val + " Register";
+		document.getElementById("PageTitle").innerHTML = "Ghost Register";
 	}
 	
 	document.getElementById("TitleText").innerHTML = val;
@@ -30,6 +32,8 @@ function ImageGenerator() {
 	img.src = 'Ghosts/Ghost' + num + '.png';
 	img.height = 32;
 	img.width = 32;
+	
+	document.getElementById("PageIcon").href = 'Ghosts/Ghost' + num + '.png';
 }
 
 function Generator() {
