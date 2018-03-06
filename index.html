@@ -11,6 +11,11 @@
 <script src="title.js"></script>
 <body onload=Generator()>
 
+<script src="register.js"></script>
+
+<!-- load jQuery from Google CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <div id="title">
 <h1 id="TitleText"><img id="TitleImage" width="0" height="32"></h1>
 </div>
@@ -19,20 +24,33 @@
 <form>
   <table align="center"> <tr>
     <td style="float:left;">CRNs:</td>
-    <td><input type="text" name="crn1" size="6"></td>
-    <td><input type="text" name="crn2" size="6"></td>
-    <td><input type="text" name="crn3" size="6"></td>
-    <td><input type="text" name="crn4" size="6"></td>
-    <td><input type="text" name="crn5" size="6"></td>
-    <td><input type="text" name="crn6" size="6"></td>
+    <td><input type="text" name="crn1" size="6" id="crn1"></td>
+    <td><input type="text" name="crn2" size="6" id="crn2"></td>
+    <td><input type="text" name="crn3" size="6" id="crn3"></td>
+    <td><input type="text" name="crn4" size="6" id="crn4"></td>
+    <td><input type="text" name="crn5" size="6" id="crn5"></td>
+    <td><input type="text" name="crn6" size="6" id="crn6"></td>
   </tr> </table>
   <table align="center"> <tr>
     <td>Registration Time:</td>
-	<td><input type="date" name="regDate"></td>
-	<td><input type="time" name="regTime"></td>
-	<td><input type="submit" value="Register" style="float:right;"></td>
+	<td><input type="date" name="regDate" id="regDate"></td>
+	<td><input type="time" name="regTime" id="regTime"></td>
+	<td><input type="button" value="Register" onclick="RegisterSubmit();" style="float:right;"></td>
   </tr> </table>
 </form>
+</div>
+
+<div id="regdetails">
+  <h3 id="RegTitle">Registration Details:</h3>
+  <h4>Time:</h4><p id="RegTime">
+  <h4>Date:</h4><p id="RegDate">
+  <h4>Courses:</h4>
+  <p id="Course1">
+  <p id="Course2">
+  <p id="Course3">
+  <p id="Course4">
+  <p id="Course5">
+  <p id="Course6">
 </div>
 
 <div class="footer">
