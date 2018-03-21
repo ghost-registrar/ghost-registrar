@@ -4,7 +4,7 @@
   "description": "Ghost Registrar",
   "main": "title.js",
   "scripts": {
-    "test": "npm test test\\sampleTest.js"
+    "test": "return 1"
   },
   "repository": {
     "type": "git",
