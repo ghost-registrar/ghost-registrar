@@ -5,19 +5,21 @@ os:
   - linux
   - osx
 
+sudo: false
+
 language: node_js
 
 before_install:
 
 
 install:
-
+  - npm install
 
 before_script:
 
 
 script:
-
+  - npm run test
 
 after-success:
 
