@@ -2,7 +2,7 @@
   "name": "ghost-registrar",
   "version": "1.0.0",
   "description": "Ghost Registrar",
-  "main": "main.js",
+  "main": "title.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

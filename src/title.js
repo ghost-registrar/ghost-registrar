@@ -29,11 +29,11 @@ function ImageGenerator() {
 	var num = Math.floor(Math.random() * 7) + 1;
 	var img = document.getElementById("TitleImage");
 	
-	img.src = 'Ghosts/Ghost' + num + '.png';
+	img.src = 'assets/images/ghosts/Ghost' + num + '.png';
 	img.height = 32;
 	img.width = 32;
 	
-	document.getElementById("PageIcon").href = 'Ghosts/Ghost' + num + '.png';
+	document.getElementById("PageIcon").href = 'assets/images/ghosts/Ghost' + num + '.png';
 }
 
 function Generator() {
