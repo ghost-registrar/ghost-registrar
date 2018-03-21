@@ -1,6 +1,12 @@
 # All comments are written prepended by #
 # Contact Kyle about editing this file. 
 
+os:
+  - linux
+  - osx
+
+language: node_js
+
 before_install:
 
 
