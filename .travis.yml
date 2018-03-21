@@ -1,0 +1,28 @@
+# All comments are written prepended by #
+# Contact Kyle about editing this file. 
+
+os:
+  - linux
+
+sudo: false
+
+language: node_js
+
+before_install:
+
+
+install:
+  - npm install
+
+before_script:
+
+
+script:
+  - npm run test
+
+after-success:
+
+
+after-failure:
+
+
