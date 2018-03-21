@@ -1,0 +1,22 @@
+{
+  "name": "ghost-registrar",
+  "version": "1.0.0",
+  "description": "Ghost Registrar",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghost-registrar/ghost-registrar.git"
+  },
+  "author": "Ghost Registrar Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghost-registrar/ghost-registrar/issues"
+  },
+  "homepage": "https://github.com/ghost-registrar/ghost-registrar#readme",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
