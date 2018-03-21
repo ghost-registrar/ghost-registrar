@@ -1,0 +1,21 @@
+# All comments are written prepended by #
+# Contact Kyle about editing this file. 
+
+before_install:
+
+
+install:
+
+
+before_script:
+
+
+script:
+
+
+after-success:
+
+
+after-failure:
+
+
