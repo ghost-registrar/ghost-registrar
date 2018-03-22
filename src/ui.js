@@ -29,11 +29,9 @@ function insertTitle() {
 function insertIcon() {
     let num = Math.floor(Math.random() * 7);
     let img = document.getElementById('title-image');
-    img.src = GHOSTS[num];
     img.height = 32;
     img.width = 32;
-    document.getElementById('page-icon').href = 'assets/images/ghosts/Ghost'
-        + num + '.png';
+    document.getElementById('page-icon').href = img.src = GHOSTS[num];
 }
 
 /** Injects the randomly-ordered project credits into the page. */
