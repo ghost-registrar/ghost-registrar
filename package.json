@@ -5,6 +5,7 @@
   "private": "true",
   "scripts": {
     "build": "webpack",
+    "lint": "eslint src/",
     "test": ""
   },
   "repository": {
@@ -22,6 +23,8 @@
   },
   "devDependencies": {
     "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1",
     "file-loader": "^1.1.11",
     "style-loader": "^0.20.3",
     "webpack": "^4.2.0",
