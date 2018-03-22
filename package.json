@@ -4,7 +4,7 @@
   "description": "Ghost Registrar",
   "private": "true",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode production",
     "lint": "eslint src/",
     "test": ""
   },
