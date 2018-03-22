@@ -7,15 +7,19 @@ os:
 sudo: false
 
 language: node_js
+node_js:
+  - "6.11.5"
+
+cache:
+  directories:
+    - node_modules
 
 before_install:
-
 
 install:
   - npm install
 
 before_script:
-
 
 script:
   - npm run build
@@ -24,7 +28,4 @@ script:
 
 after-success:
 
-
 after-failure:
-
-
