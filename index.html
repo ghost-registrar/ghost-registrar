@@ -12,6 +12,7 @@
 <body onload=Generator()>
 
 <script src="register.js"></script>
+<script src="yacs.js"></script>
 
 <!-- load jQuery from Google CDN -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -30,6 +31,7 @@
     <td><input type="text" name="crn4" size="6" id="crn4"></td>
     <td><input type="text" name="crn5" size="6" id="crn5"></td>
     <td><input type="text" name="crn6" size="6" id="crn6"></td>
+	<td><input type="button" value="Import from YACS" onclick="ImportFromYACS();"></td>
   </tr> </table>
   <table align="center"> <tr>
     <td>Registration Time:</td>
@@ -60,9 +62,6 @@
 	<a href="https://github.com/ghost-registrar/ghost-registrar">GitHub</a>
 	</td>
 	</table>
-</div>
-
-<div id="github">
 </div>
 
 </body>
