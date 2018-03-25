@@ -2,6 +2,7 @@ function RegisterSubmit() {
 	document.getElementById("RegTime").innerHTML = document.getElementById("regTime").value;
 	document.getElementById("RegDate").innerHTML = document.getElementById("regDate").value;
 	
+	// fill array with nonempty CRNs from input fields
 	var valid = [];
 	for (i = 0; i < 6; i++) {
 		var idStr = "crn" + (i + 1);
