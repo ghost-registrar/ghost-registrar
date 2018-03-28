@@ -4,7 +4,9 @@ import $ from 'jquery';
 
 /** Injects a randomized title into the page. */
 function insertTitle() {
-    $('#register-registrar').html(Math.random() < 0.5 ? 'Register' : 'Registrar');
+    $('#register-registrar').html(
+        Math.random() < 0.5 ? 'Register' : 'Registrar'
+    );
 }
 
 /** Injects a randomized ghost icon into the page. */

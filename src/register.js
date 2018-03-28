@@ -61,11 +61,9 @@ function registerSubmit() {
                 $('#set-realname').html(name);
                 $('#crn-input').hide();
                 $('#reg-details').fadeIn('fast');
-                console.log(regDate + 'T' + regTime);
                 let end = parse(regDate + 'T' + regTime);
                 console.log(end);
                 setInterval(() => {
-                    console.log(Date());
                     $('#countdown').html(distanceInWordsStrict(Date(), end));
                 }, 1000);
             });
