@@ -16,5 +16,18 @@ export class Schedule {
         this.getCourse = function(n) {
             return courses_[n];
         };
+
+        // return true if any courses within the
+        // schedule conflict with each other
+        this.hasConflicts = function() {
+            for (let i = 0; i < courses_.length; i++) {
+                for (let j = i + 1; j < courses_.length; j++) {
+                    if (courses_[i].conflicts(courses_[j])) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        };
     }
 }

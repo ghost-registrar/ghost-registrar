@@ -21,6 +21,32 @@ export class Period {
         this.toString = function() {
             return type_ + ': ' + days[day_] + ' ' + start_ + ' - ' + end_;
         };
+
+        this.getDay = function() {
+            return day_;
+        };
+
+        this.getStart = function() {
+            return start_;
+        };
+
+        this.getEnd = function() {
+            return end_;
+        };
+
+        // return true if this conflicts with period
+        this.conflicts = function(period) {
+            if (day_ != period.getDay()) {
+                return false;
+            }
+            if (start_ < period.getStart()) {
+                return (end_ >= period.getStart());
+            } else if (start_ > period.getStart()) {
+                return (period.getEnd() >= start_);
+            } else {
+                return true;
+            }
+        };
     }
 }
 
@@ -36,6 +62,7 @@ export class Course {
         let departmentCode_ = '';
         let courseNumber_ = 0;
         let periods_ = [];
+        let sectionNumber_ = '';
 
         this.crn = crn;
         name_ = sectionJson.course_name;
@@ -44,10 +71,12 @@ export class Course {
         for (let i = 0; i < sectionJson.periods.length; i++) {
             periods_.push(new Period(sectionJson.periods[i]));
         }
+        sectionNumber_ = sectionJson.name;
 
         // define methods in constructor so they can access "private" fields
         this.toString = function() {
-            return name_ + ' (' + departmentCode_ + ' ' + courseNumber_ + ')';
+            return name_ + ' (' + departmentCode_ + ' ' + courseNumber_ +
+            ' - ' + sectionNumber_ + ')';
         };
 
         // returns complete representation of course, including all periods
@@ -66,9 +95,21 @@ export class Course {
         this.getPeriod = function(n) {
             return periods_[n];
         };
-        
+
         this.getCRN = function() {
             return this.crn;
+        };
+
+        // return true if this conflicts with course
+        this.conflicts = function(course) {
+            for (let i = 0; i < periods_.length; i++) {
+                for (let j = 0; j < course.numPeriods(); j++) {
+                    if (periods_[i].conflicts(course.getPeriod(j))) {
+                        return true;
+                    }
+                }
+            }
+            return false;
         };
     }
 }

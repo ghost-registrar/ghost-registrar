@@ -50,6 +50,13 @@ function registerSubmit() {
                 courses.push(course);
             }
             let schedule = new Schedule(courses);
+
+            if (schedule.hasConflicts()) {
+                window.alert('Conflicts in schedule,' +
+                'will not be able to register.');
+                return;
+            }
+
             // for each course in the created schedule,
             // set corresponding element to course string
             for (let i = 0; i < schedule.numCourses(); i++) {
