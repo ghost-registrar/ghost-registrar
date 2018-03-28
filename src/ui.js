@@ -30,9 +30,9 @@ function insertCredits() {
         + names.reduce((x, y) => x + ', ' + y);
 }
 
-$(() => {
-    $('#cover').fadeOut();
+$(window).on('load', () => {
     insertTitle();
     insertIcon();
     insertCredits();
+    $('#cover').fadeOut('slow');
 });
