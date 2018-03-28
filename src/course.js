@@ -52,6 +52,7 @@ export class Course {
 
         // returns complete representation of course, including all periods
         this.toStringComplete = function() {
+            let str = this.toString() + '<br>';
             for (let i = 0; i < periods_.length; i++) {
                 str += periods_[i].toString() + '<br>';
             }

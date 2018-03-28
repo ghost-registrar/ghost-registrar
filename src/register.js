@@ -37,9 +37,11 @@ function registerSubmit() {
                 courses.push(course);
             }
             let schedule = new Schedule(courses);
-            // for each course in the created schedule, set corresponding element to course string
+            // for each course in the created schedule,
+            // set corresponding element to course string
             for (let i = 0; i < schedule.numCourses(); i++) {
-                document.getElementById('Course' + (i + 1)).innerHTML = schedule.getCourse(i).toStringComplete();
+                document.getElementById('Course' + (i + 1)).innerHTML =
+                schedule.getCourse(i).toStringComplete();
             }
         });
     }

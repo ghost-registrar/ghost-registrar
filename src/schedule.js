@@ -1,10 +1,10 @@
 /** Represents a schedule */
 export class Schedule {
+    // might want to add option for using schedule json
     /**
      * Constructs a Schedule from a list of courses
      * @param {array} courses An array of Courses in the schedule.
      */
-    // might want to add option for using schedule json
     constructor(courses) {
         // make a copy of the array so it cannot be changed
         let courses_ = courses.slice(0);
