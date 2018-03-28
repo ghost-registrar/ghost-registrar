@@ -66,7 +66,7 @@ export class Course {
         this.getPeriod = function(n) {
             return periods_[n];
         };
-        
+
         this.getCRN = function() {
             return this.crn;
         };
