@@ -50,6 +50,14 @@ export class Course {
             return name_ + ' (' + departmentCode_ + ' ' + courseNumber_ + ')';
         };
 
+        // returns complete representation of course, including all periods
+        this.toStringComplete = function() {
+            for (let i = 0; i < periods_.length; i++) {
+                str += periods_[i].toString() + '<br>';
+            }
+            return str;
+        };
+
         this.numPeriods = function() {
             return periods_.length;
         };
@@ -59,50 +67,3 @@ export class Course {
         };
     }
 }
-
-/* export var Period = (function() {
-    var type_ = "";
-    var day_ = 0;
-    var start_ = "";
-    var end_ = "";
-
-    function Period(periodJson) {
-        type_ = periodJson.type;
-        day_ = periodJson.day - 1;
-        start_ = periodJson.start;
-        end_ = periodJson.end;
-    }
-
-    Period.prototype.toString = function toString() {
-        return type_ + ': ' + days[day] + ' ' + start_ + ' - ' + end_;
-    }
-})(); */
-
-/* export var Course = (function() {
-    var name_ = "";
-    var departmentCode_ = "";
-    var courseNumber_ = 0;
-    var periods_ = [];
-
-    function Course(crn, sectionJson) {
-        this.crn = crn;
-        name_ = sectionJson.course_name;
-        departmentCode_ = sectionJson.department_code;
-        courseNumber_ = sectionJson.course_number;
-        for (let i = 0; i < sectionJson.periods.length; i++) {
-            periods_.push(new Period(sectionJson.periods[i]));
-        }
-    }
-
-    Course.prototype.toString = function toString() {
-        return name_ + ' (' + departmentCode_ + ' ' + courseNumber_ + ')';
-    }
-
-    Course.prototype.numPeriods = function numPeriods() {
-        return periods.length;
-    }
-
-    Course.prototype.getPeriod = function getPeriod(n) {
-        return periods[n];
-    }
-})(); */
