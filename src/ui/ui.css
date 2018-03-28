@@ -1,14 +1,11 @@
 #title {
-text-align:center;
+	text-align:center;
 }
 #crninput {
-text-align:center;
+	text-align:center;
 }
 #names {
-float:left;
-}
-#github {
-float:right;
+	float:left;
 }
 .footer {
 	position: fixed;
