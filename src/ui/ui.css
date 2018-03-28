@@ -1,37 +1,66 @@
+body {
+    margin: 40px auto;
+    padding: 0 10px;
+    max-width: 650px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #444;
+    background-color: #f8f9fa;
+    font-family: Helvetica;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+#cover {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #f8f9fa;
+    z-index:9999;
+}
+
 #title {
     text-align: center;
 }
 
-#crninput {
-    text-align: center;
-}
-
-#names {
-    float: left;
-}
-
 #reg-details {
-    text-align: center;
     display: none;
+    text-align: left;
 }
 
-#reg-details > table {
-    text-align: left;
-    margin-left: auto;
-    margin-right: auto;
+#reg-details > h2 {
+    text-align: center;
+}
+
+#reg-details > h4 {
+    margin-bottom: 0px;
 }
 
 #countdown {
     text-align: center;
-    font-size: 1000%;
+    font-size: 500%;
+    min-height: 100px;
 }
 
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(55,197,237);
-    color: black;
+#footer {
+    color: darkgrey;
     text-align: center;
+    font-size: small;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    right: 80%;
+    width: 60%;
+}
+
+#footer > hr {
+    border-color: white;
+}
+
+#credits {
+    padding-bottom: 10px;
 }

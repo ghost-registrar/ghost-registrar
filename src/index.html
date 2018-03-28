@@ -7,18 +7,26 @@
 
   <script type="text/javascript" src="bundle.js" async></script>
 
+  <div id="cover"></div>
+
+  <a href="https://github.com/ghost-registrar/ghost-registrar">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub">
+  </a>
+
   <body>
     <div id="title">
-      <h1 id="title-text">
-        <img id="title-image" width="0" height="32">
+      <h1>
+        Ghost
+        <span id="ghost">👻</span>
+        <span id="register-registrar"></span>
       </h1>
     </div>
 
     <div id="crn-input">
       <form>
-        <table align="center">
+        <table>
           <tr>
-            <td style="float:left;">CRNs:</td>
+            <td>CRNs:</td>
             <td><input type="text" name="crn1" size="6" id="crn1"></td>
             <td><input type="text" name="crn2" size="6" id="crn2"></td>
             <td><input type="text" name="crn3" size="6" id="crn3"></td>
@@ -28,19 +36,19 @@
             <td><input type="button" value="Import from YACS" onclick="importFromYACS();"></td>
           </tr>
         </table>
-        <table align="center">
+        <table>
           <tr>
             <td>Registration Time:</td>
             <td><input type="date" name="reg-date" id="reg-date"></td>
             <td><input type="time" name="reg-time" id="reg-time"></td>
           </tr>
         </table>
-        <table align="center">
+        <table>
           <tr>
             <td>Login Information</td>
             <td><input type="text" name="rin" id="rin" placeholder="RIN"></td>
             <td><input type="password" name="password" id="password" placeholder="Password"></td>
-            <td><input type="button" value="Register" onclick="registerSubmit();" style="float:right;"></td>
+            <td><input type="button" value="Register" onclick="registerSubmit();"></td>
           </tr>
         </table>
       </form>
@@ -48,42 +56,25 @@
 
     <div id="reg-details">
       <h2>Registration Details for <span id="set-realname"></span>:</h2>
-      <table>
-        <tr>
-          <td><h4>Time:</h4></td>
-          <td><span id="set-reg-time"></span></td>
-        </tr>
-        <tr>
-          <td><h4>Date:</h4></td>
-          <td><span id="set-reg-date"></span></td>
-        </tr>
-        <tr>
-          <td><h4>Courses:</h4></td>
-          <td>
-            <ul>
-              <span id="set-crn1"></div>
-              <span id="set-crn2"></div>
-              <span id="set-crn3"></div>
-              <span id="set-crn4"></div>
-              <span id="set-crn5"></div>
-              <span id="set-crn6"></div>
-            </ul>
-          </td>
-        </tr>
-      </table>
+      <h4>Time:</h4>
+      <span id="set-reg-time"></span> at <span id="set-reg-date"></span>
+      <h4>Courses:</h4>
+      <ul>
+        <span id="set-crn1"></span>
+        <span id="set-crn2"></span>
+        <span id="set-crn3"></span>
+        <span id="set-crn4"></span>
+        <span id="set-crn5"></span>
+        <span id="set-crn6"></span>
+      </ul>
 
       <div id="countdown">
       </div>
     </div>
     
-    <div class="footer">
-      <table width=100%>
-        <tr>
-          <td id="credits" align="left">Brought to you by:<br><br><br><br><br></td>
-          <td align="right">
-            <a href="https://github.com/ghost-registrar/ghost-registrar">GitHub</a>
-          </td>
-      </table>
+    <div id="footer">
+      <hr>
+      <div id="credits">Brought to you by:</div>
     </div>
     
   </body>
