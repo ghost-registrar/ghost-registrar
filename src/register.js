@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import {Course} from './course.js';
 
 /** Sets up details for registration */
 function registerSubmit() {
@@ -26,22 +27,16 @@ function registerSubmit() {
             }
         }
 
-        let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-
         // use jQuery to get json from YACS api
         $.getJSON(queryStr, function(data) {
             for (let i = 0; i < data.sections.length; i++) {
                 let idStr = 'Course' + (i + 1);
-                let course = data.sections[i];
+                let courseJson = data.sections[i];
                 let courseText = '';
-                courseText += course.course_name + ' ('
-                + course.department_code + ' '
-                + course.course_number + ')<br>';
-                for (let j = 0; j < course.periods.length; j++) {
-                    courseText += course.periods[j].type + ': '
-                    + days[course.periods[j].day - 1] + ' '
-                    + course.periods[j].start + ' - '
-                    + course.periods[j].end + '<br>';
+                let course = new Course(courseJson.crn, courseJson);
+                courseText += course.toString() + '<br>';
+                for (let j = 0; j < course.numPeriods(); j++) {
+                    courseText += course.getPeriod(j).toString() + '<br>';
                 }
                 document.getElementById(idStr).innerHTML = courseText;
             }
