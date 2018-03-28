@@ -19,9 +19,8 @@
   },
   "homepage": "https://github.com/ghost-registrar/ghost-registrar#readme",
   "dependencies": {
-    "istanbul": "^0.4.5",
-    "jquery": "^3.3.1",
-    "mocha": "^5.0.4"
+    "date-fns": "^1.29.0",
+    "jquery": "^3.3.1"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",

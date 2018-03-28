@@ -1,18 +1,37 @@
 #title {
-	text-align:center;
+    text-align: center;
 }
+
 #crninput {
-	text-align:center;
+    text-align: center;
 }
+
 #names {
-	float:left;
+    float: left;
 }
+
+#reg-details {
+    text-align: center;
+    display: none;
+}
+
+#reg-details > table {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#countdown {
+    text-align: center;
+    font-size: 1000%;
+}
+
 .footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: rgb(55,197,237);
-	color: black;
-	text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(55,197,237);
+    color: black;
+    text-align: center;
 }

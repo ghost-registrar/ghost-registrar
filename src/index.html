@@ -16,49 +16,71 @@
 
     <div id="crn-input">
       <form>
-    <table align="center">
-      <tr>
-        <td style="float:left;">CRNs:</td>
-        <td><input type="text" name="crn1" size="6" id="crn1"></td>
-        <td><input type="text" name="crn2" size="6" id="crn2"></td>
-        <td><input type="text" name="crn3" size="6" id="crn3"></td>
-        <td><input type="text" name="crn4" size="6" id="crn4"></td>
-        <td><input type="text" name="crn5" size="6" id="crn5"></td>
-        <td><input type="text" name="crn6" size="6" id="crn6"></td>
-        <td><input type="button" value="Import from YACS" onclick="importFromYACS();"></td>
-      </tr>
-    </table>
-    <table align="center">
-      <tr>
-        <td>Registration Time:</td>
-        <td><input type="date" name="regDate" id="regDate"></td>
-        <td><input type="time" name="regTime" id="regTime"></td>
-        <td><input type="button" value="Register" onclick="registerSubmit();" style="float:right;"></td>
-      </tr>
-    </table>
+        <table align="center">
+          <tr>
+            <td style="float:left;">CRNs:</td>
+            <td><input type="text" name="crn1" size="6" id="crn1"></td>
+            <td><input type="text" name="crn2" size="6" id="crn2"></td>
+            <td><input type="text" name="crn3" size="6" id="crn3"></td>
+            <td><input type="text" name="crn4" size="6" id="crn4"></td>
+            <td><input type="text" name="crn5" size="6" id="crn5"></td>
+            <td><input type="text" name="crn6" size="6" id="crn6"></td>
+            <td><input type="button" value="Import from YACS" onclick="importFromYACS();"></td>
+          </tr>
+        </table>
+        <table align="center">
+          <tr>
+            <td>Registration Time:</td>
+            <td><input type="date" name="reg-date" id="reg-date"></td>
+            <td><input type="time" name="reg-time" id="reg-time"></td>
+          </tr>
+        </table>
+        <table align="center">
+          <tr>
+            <td>Login Information</td>
+            <td><input type="text" name="rin" id="rin" placeholder="RIN"></td>
+            <td><input type="password" name="password" id="password" placeholder="Password"></td>
+            <td><input type="button" value="Register" onclick="registerSubmit();" style="float:right;"></td>
+          </tr>
+        </table>
       </form>
     </div>
 
-    <div id="regdetails">
-      <h3 id="RegTitle">Registration Details:</h3>
-      <h4>Time:</h4><p id="RegTime">
-      <h4>Date:</h4><p id="RegDate">
-      <h4>Courses:</h4>
-      <p id="Course1">
-      <p id="Course2">
-      <p id="Course3">
-      <p id="Course4">
-      <p id="Course5">
-      <p id="Course6">
+    <div id="reg-details">
+      <h2>Registration Details for <span id="set-realname"></span>:</h2>
+      <table>
+        <tr>
+          <td><h4>Time:</h4></td>
+          <td><span id="set-reg-time"></span></td>
+        </tr>
+        <tr>
+          <td><h4>Date:</h4></td>
+          <td><span id="set-reg-date"></span></td>
+        </tr>
+        <tr>
+          <td><h4>Courses:</h4></td>
+          <td>
+            <div id="set-crn1"></div>
+            <div id="set-crn2"></div>
+            <div id="set-crn3"></div>
+            <div id="set-crn4"></div>
+            <div id="set-crn5"></div>
+            <div id="set-crn6"></div>
+          </td>
+        </tr>
+      </table>
+
+      <div id="countdown">
+      </div>
     </div>
-	
+    
     <div class="footer">
       <table width=100%>
-    <tr>
-      <td id="credits" align="left">Brought to you by:<br><br><br><br><br></td>
-      <td align="right">
-        <a href="https://github.com/ghost-registrar/ghost-registrar">GitHub</a>
-      </td>
+        <tr>
+          <td id="credits" align="left">Brought to you by:<br><br><br><br><br></td>
+          <td align="right">
+            <a href="https://github.com/ghost-registrar/ghost-registrar">GitHub</a>
+          </td>
       </table>
     </div>
     
