@@ -4,3 +4,5 @@ import './ui';
 import './sis';
 import './yacs';
 import './register';
+import './course';
+import './schedule';

@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import {Course} from './course.js';
+import {Schedule} from './schedule.js';
 
 /** Sets up details for registration */
 function registerSubmit() {
@@ -26,24 +28,20 @@ function registerSubmit() {
             }
         }
 
-        let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-
         // use jQuery to get json from YACS api
         $.getJSON(queryStr, function(data) {
+            let courses = [];
             for (let i = 0; i < data.sections.length; i++) {
-                let idStr = 'Course' + (i + 1);
-                let course = data.sections[i];
-                let courseText = '';
-                courseText += course.course_name + ' ('
-                + course.department_code + ' '
-                + course.course_number + ')<br>';
-                for (let j = 0; j < course.periods.length; j++) {
-                    courseText += course.periods[j].type + ': '
-                    + days[course.periods[j].day - 1] + ' '
-                    + course.periods[j].start + ' - '
-                    + course.periods[j].end + '<br>';
-                }
-                document.getElementById(idStr).innerHTML = courseText;
+                let courseJson = data.sections[i];
+                let course = new Course(courseJson.crn, courseJson);
+                courses.push(course);
+            }
+            let schedule = new Schedule(courses);
+            // for each course in the created schedule,
+            // set corresponding element to course string
+            for (let i = 0; i < schedule.numCourses(); i++) {
+                document.getElementById('Course' + (i + 1)).innerHTML =
+                schedule.getCourse(i).toStringComplete();
             }
         });
     }
