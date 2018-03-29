@@ -1,5 +1,3 @@
-import './ui/ui.css';
-
 import $ from 'jquery';
 
 /** Injects a randomized title into the page. */
