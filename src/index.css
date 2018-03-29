@@ -4,9 +4,9 @@ body {
     max-width: 650px;
     line-height: 1.6;
     font-size: 18px;
-    color: #444;
-    background-color: #f8f9fa;
     font-family: Helvetica;
+    color: #000000;
+    background-color: #ffffff;
 }
 
 h1, h2, h3 {
@@ -33,6 +33,12 @@ h1, h2, h3 {
 #countdown {
     text-align: center;
     font-size: 500%;
+    min-height: 100px;
+}
+
+#status {
+    text-align: center;
+    font-size: 250%;
     min-height: 100px;
 }
 

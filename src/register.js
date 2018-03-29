@@ -1,17 +1,9 @@
 import $ from 'jquery';
-import {distanceInWordsStrict, parse} from 'date-fns';
+import {distanceInWordsStrict, isAfter, parse} from 'date-fns';
+
 import {Course} from './course.js';
 import {Schedule} from './schedule.js';
-
-/**
- * Fetches the real name for an SIS user.
- * @param {string} rin - RIN of SIS user
- * @param {string} pass - password of SIS user
- * @param {function} cb - callback
- */
-function sisFetchRealname(rin, pass, cb) {
-    $.post('https:///sisapi.herokuapp.com/sis/name', {rin: rin, pass: pass}, cb);
-}
+import {SISUser} from './sis.js';
 
 /** Sets up details for registration */
 function registerSubmit() {
@@ -64,14 +56,29 @@ function registerSubmit() {
                     '<li>' + schedule.getCourse(i).toStringComplete() + '</li>'
                 );
             }
-            sisFetchRealname(rin, password, (name) => {
+
+            let sis = new SISUser(rin, password);
+
+            sis.name((name) => {
                 $('#set-realname').html(name);
                 $('#crn-input').hide();
-                $('#reg-details').fadeIn('fast');
+                $('#reg-details').fadeIn('slow');
                 let end = parse(regDate + 'T' + regTime);
                 console.log(end);
-                setInterval(() => {
-                    $('#countdown').html(distanceInWordsStrict(Date(), end));
+                let timer = setInterval(() => {
+                    let now = Date();
+                    if (isAfter(now, end)) {
+                        sis.register(valid, (crns) => {
+                            $('#countdown').hide();
+                            clearInterval(timer);
+                            $('#status').fadeIn('slow');
+                            let status = 'Successfully registered for: '
+                                + crns.reduce((x, y) => x + ', ' + y);
+                            $('#status').html(status);
+                        });
+                    } else {
+                        $('#countdown').html(distanceInWordsStrict(now, end));
+                    }
                 }, 1000);
             });
         });
