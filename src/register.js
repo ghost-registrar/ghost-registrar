@@ -52,7 +52,7 @@ function registerSubmit() {
             let schedule = new Schedule(courses);
 
             if (schedule.hasConflicts()) {
-                window.alert('Conflicts in schedule,' +
+                window.alert('Conflicts in schedule, ' +
                 'will not be able to register.');
                 return;
             }
