@@ -64,7 +64,6 @@ function registerSubmit() {
                 $('#crn-input').hide();
                 $('#reg-details').fadeIn('slow');
                 let end = parse(regDate + 'T' + regTime);
-                console.log(end);
                 let timer = setInterval(() => {
                     let now = Date();
                     if (isAfter(now, end)) {
