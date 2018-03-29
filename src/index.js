@@ -4,4 +4,5 @@ require('file-loader?name=[name]!./CNAME');
 import './index.css';
 
 import './ui';
+import './yacs';
 import './register';

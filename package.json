@@ -4,9 +4,9 @@
   "description": "Ghost Registrar",
   "private": "true",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "webpack --mode development",
     "lint": "eslint src/",
-    "deploy": "gh-pages -d dist",
+    "deploy": "webpack --mode production; gh-pages -d dist",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },
   "repository": {

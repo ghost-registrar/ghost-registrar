@@ -23,7 +23,7 @@ export class SISUser {
     /** the user's real name from SIS.
      * @param {Array} crns - Courses to register.
      * @param {Function} cb - Callback on success, passed the courses
-     registered successfully.
+     * registered successfully.
      */
     register(crns, cb) {
         $.post('https://sisapi.herokuapp.com/sis/register',

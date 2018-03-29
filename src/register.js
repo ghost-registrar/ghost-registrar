@@ -37,8 +37,8 @@ function registerSubmit() {
         $.getJSON(queryStr, function(data) {
             let courses = [];
             for (let i = 0; i < data.sections.length; i++) {
-                let courseJson = data.sections[i];
-                let course = new Course(courseJson.crn, courseJson);
+                let courseJSON = data.sections[i];
+                let course = new Course(courseJSON.crn, courseJSON);
                 courses.push(course);
             }
             let schedule = new Schedule(courses);
@@ -51,9 +51,9 @@ function registerSubmit() {
 
             // for each course in the created schedule,
             // set corresponding element to course string
-            for (let i = 0; i < schedule.numCourses(); i++) {
+            for (let i = 0; i < schedule.courses.length; i++) {
                 $('#set-crn' + (i + 1)).html(
-                    '<li>' + schedule.getCourse(i).toStringComplete() + '</li>'
+                    '<li>' + schedule.courses[i].toHTML() + '</li>'
                 );
             }
 
@@ -64,7 +64,6 @@ function registerSubmit() {
                 $('#crn-input').hide();
                 $('#reg-details').fadeIn('slow');
                 let end = parse(regDate + 'T' + regTime);
-                console.log(end);
                 let timer = setInterval(() => {
                     let now = Date();
                     if (isAfter(now, end)) {
