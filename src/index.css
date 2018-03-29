@@ -57,6 +57,11 @@ h1, h2, h3 {
     border-color: white;
 }
 
+#credits > a {
+    color: darkgrey;
+    text-decoration: none;
+}
+
 #credits {
     padding-bottom: 10px;
 }

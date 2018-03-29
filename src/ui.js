@@ -16,16 +16,16 @@ function insertIcon() {
 /** Injects the randomly-ordered project credits into the page. */
 function insertCredits() {
     let names = [
-        'John Morach',
-        'Cameron Riley',
-        'Sam Breese',
-        'Kyle Fawcett',
+        ['John Morach', 'johnmorach'],
+        ['Cameron Riley', 'camr315'],
+        ['Sam Breese', 'chameco'],
+        ['Kyle Fawcett', 'RustyPotato'],
     ];
-    names = [...Array(4)].map(
-        (_) => names.splice(Math.floor(Math.random() * names.length), 1)
-    );
-    document.getElementById('credits').innerHTML = 'Brought to you by: '
-        + names.reduce((x, y) => x + ', ' + y);
+    $('#credits').html('Brought to you by: ' +
+                       names
+                       .sort((x, y) => Math.random() < 0.5 ? -1 : 1)
+                       .map(([n, u]) => '<a href="https://github.com/' + u + '">' + n + '</a>')
+                       .reduce((x, y) => x + ', ' + y));
 }
 
 $(window).on('load', () => {
