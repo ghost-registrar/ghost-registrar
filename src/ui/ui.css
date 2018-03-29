@@ -13,16 +13,6 @@ h1, h2, h3 {
     line-height: 1.2;
 }
 
-#cover {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: #f8f9fa;
-    z-index:9999;
-}
-
 #title {
     text-align: center;
 }
