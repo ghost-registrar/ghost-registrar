@@ -75,8 +75,9 @@ export class Course {
         console.log('checking for conflicts in course');
         console.log('comparing ' + this + ' with ' + course);
         return this.periods.reduce(
-            (acc, p1) => acc || course.periods.map((p2) => p1.conflicts(p2)),
-            false
-        );
+            (acc, p1) => acc || course.periods
+                .map((p2) => p1.conflicts(p2))
+                .reduce((x, y) => x || y, false),
+            false);
     };
 }
