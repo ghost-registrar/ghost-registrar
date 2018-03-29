@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode development",
     "lint": "eslint src/",
-    "deploy": "webpack --mode production; gh-pages -d dist",
+    "deploy": "rm -rf dist/; webpack --mode production; gh-pages -d dist/",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },
   "repository": {
