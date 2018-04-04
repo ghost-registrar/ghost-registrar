@@ -27,5 +27,6 @@ script:
   - npm run test
 
 after-success:
+  - npm run coverage
 
 after-failure:
