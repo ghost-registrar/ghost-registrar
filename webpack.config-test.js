@@ -16,6 +16,13 @@ module.exports = {
         use: [
             'file-loader'
         ]
+        },
+        {
+        test: /\.js$/,
+        use: {
+            loader: 'istanbul-instrumenter-loader',
+            options: { esModules: true }
+        }
         }
     ]
     }
