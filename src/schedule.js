@@ -27,9 +27,10 @@ export class Schedule {
         // Get the list of all conflicting classes.
         let allConflicts = [];
         for (let i = 0; i < this.courses.length; i++) {
-            allConflicts = allConflicts.concat(this.courses[i].listedConflicts);
+            allConflicts = allConflicts.concat(
+                    this.courses[i].listedConflicts);
         }
-        
+
         // Check if any of the courses we have are in the conflicting courses list.
         for (let i = 0; i < this.courses.length; i++) {
             if (allConflicts.includes(this.courses[i].crn)) {
