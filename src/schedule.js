@@ -31,7 +31,7 @@ export class Schedule {
                     this.courses[i].listedConflicts);
         }
 
-        // Check if any of the courses we have are in the conflicting courses list.
+        // Check if our courses are in the conflicting courses list.
         for (let i = 0; i < this.courses.length; i++) {
             if (allConflicts.includes(this.courses[i].crn)) {
                 return true;
