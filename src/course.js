@@ -49,6 +49,7 @@ export class Course {
         this.sectionNumber = sectionJSON.name;
         this.crn = crn;
         this.periods = sectionJSON.periods.map((x) => new Period(x));
+        this.listedConflicts = sectionJSON.conflicts;
     }
 
     /**
