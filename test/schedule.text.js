@@ -1,3 +1,4 @@
+import {Course} from '../src/course.js';
 import {Schedule} from '../src/schedule.js';
 
 var assert = require('assert');
