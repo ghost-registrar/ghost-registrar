@@ -28,9 +28,13 @@ export class Period {
     conflicts(period) {
         console.log('checking for conflicts in period');
         if (this.day != period.day) return false;
-        if (this.start < period.start) return (this.end >= period.start);
-        else if (this.start > period.start) return (period.end >= this.start);
-        else return true;
+        if (parseInt(this.start) < parseInt(period.start)) {
+            return (parseInt(this.end) >= parseInt(period.start));
+        } else if (parseInt(this.start) > parseInt(period.start)) {
+            return (parseInt(period.end) >= parseInt(this.start));
+        } else {
+            return true;
+        }
     };
 }
 
