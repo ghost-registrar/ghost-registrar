@@ -22,8 +22,8 @@ describe('Course', function() {
             let c2json = {"course_name": "Software Design and Documentation", "course_number": 4440, "department_code": "CSCI", "name": "01","periods": [{"type": "LEC","day": 1,"start": 1600,"end": 1750}, {"type": "LEC", "day": 4, "start": 1600, "end": 1750}]};
             let c1 = new Course(65042, c1json);
             let c2 = new Course(61099, c2json);
-            assert.deepStrictEqual(c1.toHTML(), "Natural Sciences I (ERTH 1030 - 01)<br>LEC: Monday 1600 - 1750<br>LEC: Thursday 1600 - 1750<br>", "Case 1 does not follow toHTML() format.")
-            assert.deepStrictEqual(c2.toHTML(), "Software Design and Documentation (CSCI 4440 - 01)<br>LEC: Monday 1600 - 1750<br>LEC: Thursday 1600 - 1750<br>", "Case 2 does not follow toHTML() format.");
+            assert.deepStrictEqual(c1.toHTML(), "Natural Sciences I (ERTH 1030 - 01)<br>LEC: Monday 1600 - 1750<br>LEC: Thursday 1600 - 1750", "Case 1 does not follow toHTML() format.")
+            assert.deepStrictEqual(c2.toHTML(), "Software Design and Documentation (CSCI 4440 - 01)<br>LEC: Monday 1600 - 1750<br>LEC: Thursday 1600 - 1750", "Case 2 does not follow toHTML() format.");
         });
     });
 
