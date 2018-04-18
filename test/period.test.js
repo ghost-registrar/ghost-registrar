@@ -1,6 +1,6 @@
 import {Period} from '../src/course.js';
 
-var assert = require('assert');
+let assert = require('assert');
 
 describe('Period', function() {
     let p1json = {type: 'LEC', day: 1, start: '1000', end: '1150'};

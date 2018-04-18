@@ -67,9 +67,9 @@ function registerSubmit() {
                 let timer = setInterval(() => {
                     let now = Date();
                     if (isAfter(now, end)) {
-                        sis.register(valid, (crns) => {
-                            $('#countdown').hide();
-                            clearInterval(timer);
+                        $('#countdown').hide();
+                        clearInterval(timer);
+                        sis.register($('#reg-term').val(), valid, (crns) => {
                             $('#status').fadeIn('slow');
                             let status = 'Successfully registered for: '
                                 + crns.reduce((x, y) => x + ', ' + y);
