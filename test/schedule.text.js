@@ -34,7 +34,7 @@ describe('Schedule', function() {
             let s4 = new Schedule([c1]);
             
             assert.ok(!s1.hasConflicts(), "Failed on hasConflicts() test 1.");
-            assert.ok(!s2.hasConflicts(), "Failed on hasConflicts() test 2.");
+            assert.ok( s2.hasConflicts(), "Failed on hasConflicts() test 2.");
             assert.ok(!s3.hasConflicts(), "Failed on hasConflicts() test 3.");
             assert.ok(!s4.hasConflicts(), "Failed on hasConflicts() test 4.");
             
