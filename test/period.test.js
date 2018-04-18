@@ -1,6 +1,6 @@
 import {Period} from '../src/course.js';
 
-var assert = require('assert');
+let assert = require('assert');
 
 describe('Period', function() {
     describe('conflicts', function() {

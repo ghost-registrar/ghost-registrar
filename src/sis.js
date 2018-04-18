@@ -21,14 +21,16 @@ export class SISUser {
     }
 
     /** the user's real name from SIS.
+     * @param {String} term - Registration term.
      * @param {Array} crns - Courses to register.
      * @param {Function} cb - Callback on success, passed the courses
      * registered successfully.
      */
-    register(crns, cb) {
+    register(term, crns, cb) {
         $.post('https://sisapi.herokuapp.com/sis/register',
                {rin: this.rin,
                 pass: this.pass,
+                term: term,
                 crns: JSON.stringify(crns.map((x) => x.toString()))},
                cb);
     }
