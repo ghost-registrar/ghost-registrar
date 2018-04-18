@@ -13,7 +13,7 @@ describe('Course', function() {
             let c2 = new Course(61099, c2json);
 
             assert.deepStrictEqual(c1.toString(), "Natural Sciences I (ERTH 1030 - 01)", "Case 1 does not follow toString() format.")
-            assert.deepStrictEqual(c2.toString(), "Software Design and Documentation (CSCI 4440 - 1)", "Case 2 does not follow toString() format.");
+            assert.deepStrictEqual(c2.toString(), "Software Design and Documentation (CSCI 4440 - 01)", "Case 2 does not follow toString() format.");
         });
     });
 
