@@ -7,7 +7,7 @@
     "build": "webpack --mode development",
     "lint": "eslint src/",
     "deploy": "rm -rf dist/; webpack --mode production; gh-pages -d dist/",
-    "test": "nyc mocha-webpack --webpack-config webpack.config-test.js",
+    "test": "nyc mocha-webpack --webpack-config webpack.config-test.js src test -r jsdom-global/register",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
@@ -38,13 +38,16 @@
     "mocha": "^5.0.5",
     "mocha-webpack": "next",
     "webpack-node-externals": "^1.7.2",
-    "istanbul-instrumenter-loader": "^3.0.1"
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "jsdom-global": "^3.0.2",
+    "jsdom": "^11.8.0",
+    "null-loader": "^0.1.1"
   },
   "nyc": {
     "include": [
-	  "src/*.js"
-	],
-	"instrument": false,
-	"sourceMap": false
+      "src/*.js"
+    ],
+    "instrument": false,
+    "sourceMap": false
   }
 }
