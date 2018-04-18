@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import {format} from 'date-fns';
 
 $(window).on('load', () => {
     $('#register-registrar').html(
@@ -18,4 +19,7 @@ $(window).on('load', () => {
                        .map(([n, u]) => '<a href="https://github.com/' + u + '">' + n + '</a>')
                        .reduce((x, y) => x + ', ' + y));
     $('#cover').fadeOut('slow');
+		
+	$('#reg-date').attr('value',format(new Date(), 'YYYY-MM-DD'));
+	$('#reg-time').attr('value',format(new Date(), 'HH:MM'));
 });
