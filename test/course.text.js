@@ -42,17 +42,17 @@ describe('Course', function() {
             let c3 = new Course(66666, c3json);
             
             // Makes sure it is reflexive
-            assert.ok(!c1.conflicts(c2));
-            assert.ok(!c2.conflicts(c1));
+            assert.ok(!c1.conflicts(c2), "Course conflict test 1 failed.");
+            assert.ok(!c2.conflicts(c1), "Course conflict test 2 failed.");
             
             // Makes sure there are no conflict paths.
-            assert.ok( c3.conflicts(c2));
-            assert.ok( c3.conflicts(c1));
+            assert.ok( c3.conflicts(c2), "Course conflict test 3 failed.");
+            assert.ok( c3.conflicts(c1), "Course conflict test 4 failed.");
             
             // A course must conflict with itself.
-            assert.ok(!c1.conflicts(c1));
-            assert.ok(!c2.conflicts(c2));
-            assert.ok(!c3.conflicts(c3));
+            assert.ok(!c1.conflicts(c1), "Course conflict test 5 failed.");
+            assert.ok(!c2.conflicts(c2), "Course conflict test 6 failed.");
+            assert.ok(!c3.conflicts(c3), "Course conflict test 7 failed.");
             
         });
     });
