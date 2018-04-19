@@ -16,6 +16,7 @@ export class SISUser {
      * @param {Function} cb - Callback on success, passed the real name.
      */
     name(cb) {
+        // send POST request with rin and password to get name
         $.post('https://sisapi.herokuapp.com/sis/name',
                {rin: this.rin, pass: this.pass}, cb);
     }
@@ -27,6 +28,8 @@ export class SISUser {
      * registered successfully.
      */
     register(term, crns, cb) {
+        // send POST request with rin, password, term, and CRNs
+        // to attempt to register
         $.post('https://sisapi.herokuapp.com/sis/register',
                {rin: this.rin,
                 pass: this.pass,

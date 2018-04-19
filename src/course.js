@@ -27,11 +27,19 @@ export class Period {
      */
     conflicts(period) {
         console.log('checking for conflicts in period');
+        // if different days, no conflict
         if (this.day != period.day) return false;
+
+        // if this starts before period,
+        // conflict if this ends after period starts
         if (parseInt(this.start) < parseInt(period.start)) {
             return (parseInt(this.end) >= parseInt(period.start));
+        // if this starts after period,
+        // conflict if period ends after this starts
         } else if (parseInt(this.start) > parseInt(period.start)) {
             return (parseInt(period.end) >= parseInt(this.start));
+        // otherwise, this and period start at the same time,
+        // so there is a conflict
         } else {
             return true;
         }
@@ -52,6 +60,7 @@ export class Course {
         this.courseNumber = sectionJSON.course_number;
         this.sectionNumber = sectionJSON.name;
         this.crn = crn;
+        // create periods from corresponding JSON
         this.periods = sectionJSON.periods.map((x) => new Period(x));
     }
 
@@ -67,6 +76,8 @@ export class Course {
      * @return {String} Returns an HTML representation of the object.
      */
     toHTML() {
+        // create HTML containing course information as well as
+        // information for all periods
         return this.toString() + '<br>'
             + this.periods.reduce((acc, p) => acc + '<br>' + p.toString());
     };
@@ -78,6 +89,7 @@ export class Course {
     conflicts(course) {
         console.log('checking for conflicts in course');
         console.log('comparing ' + this + ' with ' + course);
+        // check periods in this against periods in course
         return this.periods.reduce(
             (acc, p1) => acc || course.periods
                 .map((p2) => p1.conflicts(p2))
