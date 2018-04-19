@@ -85,7 +85,9 @@ function registerSubmit() {
                                     + crns.reduce((x, y) => x + ', ' + y);
                                 $('#status').html(status);
                             } else {
-                                $('#status').html('Failed to register for all courses');
+                                $('#status').html(
+                                    'Failed to register for all courses'
+                                );
                             }
                         });
                     // otherwise, update countdown
