@@ -71,9 +71,13 @@ function registerSubmit() {
                         clearInterval(timer);
                         sis.register($('#reg-term').val(), valid, (crns) => {
                             $('#status').fadeIn('slow');
-                            let status = 'Successfully registered for: '
-                                + crns.reduce((x, y) => x + ', ' + y);
-                            $('#status').html(status);
+                            if (crns.length != 0) {
+                                let status = 'Successfully registered for: '
+                                    + crns.reduce((x, y) => x + ', ' + y);
+                                $('#status').html(status);
+                            } else {
+                                $('#status').html('Failed to register for all courses');
+                            }
                         });
                     } else {
                         $('#countdown').html(distanceInWordsStrict(now, end));
