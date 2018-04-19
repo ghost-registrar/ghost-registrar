@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import {format} from 'date-fns';
+import bonus from './bonus.gif';
 
 $(window).on('load', () => {
     $('#register-registrar').html(
@@ -21,4 +22,7 @@ $(window).on('load', () => {
     $('#cover').fadeOut('slow');
     $('#reg-date').attr('value', format(new Date(), 'YYYY-MM-DD'));
     $('#reg-time').attr('value', format(new Date(), 'HH:MM'));
+    $('#bonus').html('<a href="http://sis.rpi.edu"><img id="bonus-img" src="' + bonus + '"></a>');
+    $('#bonus').mouseenter((_) => $('#bonus-img').fadeIn('slow'));
+    $('#bonus').mouseleave((_) => $('#bonus-img').fadeOut('slow'));
 });
