@@ -36,6 +36,7 @@ function registerSubmit() {
         // use jQuery to get json from YACS api
         $.getJSON(queryStr, function(data) {
             let courses = [];
+            // create Courses from returned json
             for (let i = 0; i < data.sections.length; i++) {
                 let courseJSON = data.sections[i];
                 let course = new Course(courseJSON.crn, courseJSON);
@@ -60,12 +61,15 @@ function registerSubmit() {
             let sis = new SISUser(rin, password);
 
             sis.name((name) => {
+                // display name of user
                 $('#set-realname').html(name);
                 $('#crn-input').hide();
                 $('#reg-details').fadeIn('slow');
                 let end = parse(regDate + 'T' + regTime);
+                // create timer to register when time is reached
                 let timer = setInterval(() => {
                     let now = Date();
+                    // if now is after registration time, register
                     if (isAfter(now, end)) {
                         $('#countdown').hide();
                         clearInterval(timer);
@@ -79,12 +83,15 @@ function registerSubmit() {
                                 $('#status').html('Failed to register for all courses');
                             }
                         });
+                    // otherwise, update countdown
                     } else {
                         $('#countdown').html(distanceInWordsStrict(now, end));
                     }
                 }, 1000);
             });
         });
+    } else {
+        window.alert('No CRNs chosen.');
     }
 }
 

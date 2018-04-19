@@ -1,7 +1,5 @@
 /** Represents a schedule */
 export class Schedule {
-    // might want to add option for using schedule json
-
     /**
      * Constructs a Schedule from a list of courses
      * @param {array} courses An array of Courses in the schedule.
@@ -16,6 +14,7 @@ export class Schedule {
      */
     hasConflicts() {
         console.log('checking for conflicts in schedule');
+        // check all pairs of Courses to see if there are any conflicts
         return this.courses.reduce(
             (acc, c1, i) => acc || this.courses
                 .slice(i + 1)
