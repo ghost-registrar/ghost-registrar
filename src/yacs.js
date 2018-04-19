@@ -2,21 +2,25 @@ import $ from 'jquery';
 
 /** Imports CRNs from a YACS schedule link */
 function importFromYACS() {
-    // should add paste from clipboard if possible
+    // should add paste from clipboard option if possible
     let url = window.prompt('Enter the schedule link (copied from YACS):', '');
 
+    // if no url entered
     if (url == null) {
         return;
     }
 
+    // regex to match valid yacs schedule urls
     let regex = /https?:\/\/yacs\.cs\.rpi\.edu\/#\/schedules\?section_ids=/;
     let valid = regex.test(url);
 
     if (!valid) {
         window.alert('Invalid schedule link.');
     }
+    // change schedule url to api url
     url = url.replace('#', 'api/v5');
 
+    // call api to get schedule json
     $.getJSON(url, function(data) {
         if (data.schedules.length > 0) {
             let index = 0;
@@ -30,6 +34,7 @@ function importFromYACS() {
             }
 
             let schedule = data.schedules[index];
+            // fill crn fields based on schedule
             for (let i = 0; i < schedule.sections.length && i < 6; i++) {
                 let crnField = document.getElementById('crn' + (i + 1));
                 crnField.value = schedule.sections[i].crn;
