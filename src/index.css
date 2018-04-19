@@ -22,6 +22,10 @@ h1, h2, h3 {
     text-align: left;
 }
 
+#reg-details-courses {
+    display: none;
+}
+
 #reg-details > h2 {
     text-align: center;
 }

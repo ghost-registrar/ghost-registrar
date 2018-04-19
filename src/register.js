@@ -52,10 +52,12 @@ function registerSubmit() {
 
             // for each course in the created schedule,
             // set corresponding element to course string
+            let anycourses = false;
             for (let i = 0; i < schedule.courses.length; i++) {
                 $('#set-crn' + (i + 1)).html(
                     '<li>' + schedule.courses[i].toHTML() + '</li>'
                 );
+                anycourses = true;
             }
 
             let sis = new SISUser(rin, password);
@@ -65,6 +67,9 @@ function registerSubmit() {
                 $('#set-realname').html(name);
                 $('#crn-input').hide();
                 $('#reg-details').fadeIn('slow');
+                if (anycourses) {
+                    $('#reg-details-courses').show();
+                }
                 let end = parse(regDate + 'T' + regTime);
                 // create timer to register when time is reached
                 let timer = setInterval(() => {

@@ -27,7 +27,7 @@ $(window).on('load', () => {
 
     $('#cover').fadeOut('slow');
     $('#reg-date').attr('value', format(new Date(), 'YYYY-MM-DD'));
-    $('#reg-time').attr('value', format(new Date(), 'hh:mm'));
+    $('#reg-time').attr('value', format(new Date(), 'HH:mm'));
     $('#bonus').html('<a href="http://sis.rpi.edu"><img id="bonus-img" src="' + bonus + '"></a>');
     $('#bonus').mouseenter((_) => $('#bonus-img').fadeIn('slow'));
     $('#bonus').mouseleave((_) => $('#bonus-img').fadeOut('slow'));
