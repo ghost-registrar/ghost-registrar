@@ -15,10 +15,9 @@ function registerSubmit() {
 
     // check for unusual registration dates
     let reg = parse(regDate + 'T' + regTime);
-    // if registration is before 8 AM, after 8 PM, and not now,
+    // if registration is before 8 AM or after 8 PM and not now (same hour),
     // or on a weekend and not today
-    if (((getHours(reg) > 20 || getHours(reg) < 8) &&
-    (!isToday(reg) || !isThisHour(reg))) ||
+    if (((getHours(reg) > 20 || getHours(reg) < 8) && !isThisHour(reg)) ||
     (!isToday(reg) && isWeekend(reg))) {
         if (!confirm('Registration date/time is unusual, continue?')) {
             return;
