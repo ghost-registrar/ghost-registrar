@@ -1,5 +1,6 @@
 import $ from 'jquery';
-import {distanceInWordsStrict, isAfter, parse} from 'date-fns';
+import {distanceInWordsStrict, isAfter, parse, getHours,
+isToday, isThisHour, isWeekend} from 'date-fns';
 
 import {Course} from './course.js';
 import {Schedule} from './schedule.js';
@@ -11,6 +12,17 @@ function registerSubmit() {
     let regDate = $('#reg-date').val();
     let rin = $('#rin').val();
     let password = $('#password').val();
+
+    // check for unusual registration dates
+    let reg = parse(regDate + 'T' + regTime);
+    // if registration is before 8 AM or after 8 PM and not now (same hour),
+    // or on a weekend and not today
+    if (((getHours(reg) > 20 || getHours(reg) < 8) && !isThisHour(reg)) ||
+    (!isToday(reg) && isWeekend(reg))) {
+        if (!confirm('Registration date/time is unusual, continue?')) {
+            return;
+        }
+    }
 
     // fill array with nonempty CRNs from input fields
     let valid = [];
